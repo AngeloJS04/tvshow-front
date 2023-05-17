@@ -24,14 +24,16 @@ const MovieSelect = () => {
     return (
         <Container css={{ m: '$18' }}>
             {loading ? <Loading /> :
-                <Grid.Container>
-                    <Grid xs={11} md={3} >
-                        <CardSelected movie={movie} />
-                    </Grid>
-                    <Grid xs={11} md={8}>
-                        <DescriptionCard movie={movie} />
-                    </Grid>
-                </Grid.Container>
+                movie && (
+                    <Grid.Container>
+                        <Grid xs={11} md={3} >
+                            <CardSelected movie={movie} />
+                        </Grid>
+                        <Grid xs={11} md={8}>
+                            <DescriptionCard movie={movie} />
+                        </Grid>
+                    </Grid.Container>
+                )
             }
         </Container>
     )

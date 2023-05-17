@@ -23,7 +23,6 @@ const DashboardPage = () => {
         <Layout>
             <Container>
                 {loading ? <Loading /> : <ContainerCard />}
-
                 <Grid css={{ my: '$10', display: 'flex', justifyContent: 'center' }}>
                     <Pagination total={20} initialPage={1}
                         onChange={(page) => setOffset(page)}
