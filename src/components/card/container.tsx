@@ -21,7 +21,7 @@ const ContainerCard = () => {
                                 {<CardMovies key={item.id} item={item} />}
                             </Grid>
                         ))
-                    ) : (<NotFound />)
+                    ) : (<NotFound/>)
                 }
             </Grid.Container>
         </Container>
