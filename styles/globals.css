@@ -1,26 +1,76 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+
+.card {
+  position: relative;
+  width: 320px;
+  height: 25rem;
+  /* background: ; */
+  border-radius: 20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.card .poster {
+  position: relative;
+  overflow: hidden;
+
+}
+.card .poster::before {
+content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -180px;
+  background: linear-gradient(0deg, #000, transparent);
+  transition: 0.5s;
+  z-index: 1;
+
+}
+.card:hover .poster::before {
+bottom: 0px;
+  
   }
-  body {
-    color: white;
-    background: black;
+.card .poster img {
+ width: 100%;
+ height: 100%;  
+ transition:0.5s ;
+ object-fit: cover;
+}
+.card:hover .poster img {
+transform: translateY(-50px);
+filter: blur(5px);
+}
+.card .details {
+  position: absolute;
+  width: 100%;
+  bottom: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  z-index: 2;
+  transition: 0.5s;
+}
+.card:hover .details{
+  bottom: 70px;
+}
+.card .details .title {
+  max-width:180px ;
+}
+
+@media (max-width:1000px) {
+  .card {
+      height: 18rem
+  }
+}
+@media (max-width:1800px) {
+  .card {
+      height: 20rem
   }
 }
